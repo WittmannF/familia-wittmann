@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CardLink from '../components/CardLink.astro';
+import { url } from '../lib/paths';
+---
+<BaseLayout title="Família Wittmann">
+  <section class="container hero">
+    <div class="eyebrow">Memórias, histórias e registros familiares</div>
+    <h1>Família Wittmann</h1>
+    <p class="lead">Um espaço simples e durável para reunir memórias, histórias, fotos e registros familiares. Começamos com o memorial de Ivo Amandio Wittmann, preparado para crescer com novas páginas, árvore genealógica e história da família.</p>
+    <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="button" href={url('/ivo')}>Conhecer o memorial de Ivo</a><a class="button secondary" href={url('/enviar')}>Enviar memória</a></p>
+  </section>
+  <section class="container section grid grid-3">
+    <CardLink href={url('/ivo')} title="Memorial de Ivo" text="Homenagem, história de vida, fotos, mensagens e lembranças." />
+    <CardLink href={url('/ivo/fotos')} title="Fotos" text="Galeria com fotos publicadas após revisão da família." />
+    <CardLink href={url('/ivo/livro-de-visitas')} title="Livro de visitas" text="Mensagens curtas, orações e registros de carinho." />
+    <CardLink href={url('/enviar')} title="Enviar memória" text="Formulário para relatos, fotos, áudios, vídeos e documentos." />
+    <CardLink href={url('/ivo/memorias')} title="Memórias" text="Relatos mais longos enviados por familiares e amigos." />
+    <CardLink href={url('/familia')} title="História da família" text="Espaço futuro para genealogia, imigração e origem Wittmann." />
+  </section>
+</BaseLayout>

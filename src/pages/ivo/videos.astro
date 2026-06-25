@@ -1,0 +1,6 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const videos = (await getCollection('videos')).filter(v => v.data.person === 'ivo-wittmann' && v.data.publish);
+---
+<BaseLayout title="Vídeos — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Memorial de Ivo</div><h1>Vídeos</h1><p class="lead">Vídeos publicados após revisão. Arquivos grandes podem ficar no R2 ou storage externo.</p></section><section class="container grid">{videos.map(v => <article class="card"><h2 class="serif">{v.data.title}</h2><p>{v.data.description}</p>{v.data.src ? <video controls src={v.data.src}></video> : <div class="placeholder-media">Vídeo pendente</div>}</article>)}</section></BaseLayout>

@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { asset } from '../../lib/paths';
+const photos = (await getCollection('photos')).filter(p => p.data.person === 'ivo-wittmann' && p.data.publish);
+---
+<BaseLayout title="Fotos — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Memorial de Ivo</div><h1>Fotos</h1><p class="lead">Galeria de fotos publicadas após revisão.</p></section><section class="container gallery">{photos.map(photo => <article class="card"><img src={asset(photo.data.src)} alt={photo.data.description || photo.data.title}/><h2 class="serif">{photo.data.title}</h2><p class="meta">{photo.data.date || 'Data aproximada a confirmar'}</p><p>{photo.data.description}</p><p class="help">Pessoas: {photo.data.people_in_photo.join(', ') || 'a confirmar'}</p></article>)}</section></BaseLayout>

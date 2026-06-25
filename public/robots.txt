@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Este site é público, mas discreto. robots.txt reduz indexação, não garante privacidade.

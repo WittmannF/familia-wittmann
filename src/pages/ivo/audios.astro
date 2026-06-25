@@ -1,0 +1,6 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const audios = (await getCollection('audio')).filter(a => a.data.person === 'ivo-wittmann' && a.data.publish);
+---
+<BaseLayout title="Áudios — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Memorial de Ivo</div><h1>Áudios</h1><p class="lead">Mensagens de voz e áudios publicados após revisão.</p></section><section class="container grid">{audios.map(a => <article class="card"><h2 class="serif">{a.data.title}</h2><p>{a.data.description}</p>{a.data.src ? <audio controls src={a.data.src}></audio> : <div class="placeholder-media">Áudio pendente</div>}</article>)}</section></BaseLayout>

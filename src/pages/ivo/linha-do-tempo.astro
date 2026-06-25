@@ -1,0 +1,6 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const items = (await getCollection('timeline')).filter(i => i.data.person === 'ivo-wittmann' && i.data.publish).sort((a,b)=>a.data.order-b.data.order);
+---
+<BaseLayout title="Linha do tempo — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Eventos importantes</div><h1>Linha do tempo</h1><p class="lead">Marcos da vida de Ivo, com datas a serem confirmadas pela família.</p></section><section class="container card timeline">{items.map(async item => { const { Content } = await item.render(); return <article class="timeline-item"><h2 class="serif">{item.data.year || item.data.date} · {item.data.title}</h2><Content /></article>})}</section></BaseLayout>

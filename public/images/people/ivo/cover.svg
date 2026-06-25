@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Imagem provisória do memorial de Ivo Wittmann">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efe7d8"/><stop offset="1" stop-color="#c7b99f"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <circle cx="600" cy="330" r="130" fill="#fff8ec" opacity="0.75"/>
+  <path d="M360 680c46-154 155-238 240-238s194 84 240 238" fill="#fff8ec" opacity="0.75"/>
+  <text x="600" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="54" fill="#554536">Ivo Amandio Wittmann</text>
+</svg>

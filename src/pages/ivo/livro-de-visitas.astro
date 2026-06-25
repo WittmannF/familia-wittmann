@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../lib/paths';
+const entries = (await getCollection('guestbook')).filter(e => e.data.person === 'ivo-wittmann' && e.data.publish).sort((a,b)=>b.data.date_received.localeCompare(a.data.date_received));
+---
+<BaseLayout title="Livro de visitas — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Mensagens breves</div><h1>Livro de visitas</h1><p class="lead">Recados, orações, lembranças breves e registros de carinho.</p><a class="button" href={url('/enviar')}>Deixar uma mensagem</a></section><section class="container grid">{entries.map(async (e) => { const { Content } = await e.render(); return <article class="card"><Content /><p class="meta">— {e.data.show_author_name ? e.data.author : 'Nome não divulgado'}{e.data.city ? `, ${e.data.city}` : ''}</p></article>})}</section></BaseLayout>

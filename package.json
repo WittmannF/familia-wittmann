@@ -1,0 +1,26 @@
+{
+  "name": "familia-wittmann",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host 0.0.0.0",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 0.0.0.0",
+    "import:submission": "tsx scripts/import-submission.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/cloudflare": "^12.6.5",
+    "astro": "^5.13.0",
+    "sharp": "^0.34.3",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.879.0",
+    "@cloudflare/workers-types": "^4.20260625.1",
+    "@types/node": "^26.0.1",
+    "tsx": "^4.20.5"
+  }
+}

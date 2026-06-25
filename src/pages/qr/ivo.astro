@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import QrLayout from '../../layouts/QrLayout.astro';
+import { asset, url } from '../../lib/paths';
+const person = (await getCollection('people')).find((entry) => entry.data.id === 'ivo-wittmann');
+if (!person) throw new Error('Pessoa ivo-wittmann não encontrada.');
+---
+<QrLayout title="Memorial de Ivo Wittmann">
+  <main class="qr-page">
+    <div class="container">
+      <article class="qr-card">
+        <figure class="portrait"><img src={asset(person.data.cover_image)} alt={`Foto de ${person.data.full_name}`}/></figure>
+        <p class="eyebrow" style="margin-top:18px">Memorial familiar</p>
+        <h1 class="serif" style="font-size:2.15rem;line-height:1.1;margin:.2em 0">{person.data.full_name}</h1>
+        <p class="meta">{person.data.birth_date} — {person.data.death_date}</p>
+        <p>Você chegou ao memorial de Ivo Wittmann. Este espaço reúne fotos, histórias, mensagens e lembranças compartilhadas pela família e por amigos.</p>
+        <div class="qr-actions">
+          <a class="button" href={url('/ivo/historia')}>Ver história</a>
+          <a class="button secondary" href={url('/ivo/fotos')}>Ver fotos</a>
+          <a class="button secondary" href={url('/ivo/livro-de-visitas')}>Livro de visitas</a>
+          <a class="button secondary" href={url('/enviar')}>Deixar uma mensagem</a>
+          <a class="button secondary" href={url('/enviar')}>Enviar uma memória</a>
+        </div>
+      </article>
+    </div>
+  </main>
+</QrLayout>

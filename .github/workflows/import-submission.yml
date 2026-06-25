@@ -1,0 +1,41 @@
+name: Import R2 submission
+on:
+  workflow_dispatch:
+    inputs:
+      submission_key:
+        description: R2 key for inbox/YYYY-MM-DD/sub_x/submission.json
+        required: true
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Import submission as draft content
+        env:
+          SUBMISSION_KEY: ${{ inputs.submission_key }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: npm run import:submission
+      - name: Open pull request for human review
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: import submitted memorial content"
+          title: "Revisar nova contribuição recebida pelo site"
+          body: |
+            Esta PR foi criada automaticamente a partir de uma submissão privada no R2.
+
+            - Todo conteúdo nasce com `publish: false`.
+            - Revise texto, permissões, autoria, privacidade e mídia antes de publicar.
+            - Só altere para `publish: true` quando a família aprovar.
+          branch: import/submission-${{ github.run_id }}
+          labels: submission,needs-review

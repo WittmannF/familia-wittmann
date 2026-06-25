@@ -1,0 +1,6 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const memories = (await getCollection('memories')).filter(m => m.data.person === 'ivo-wittmann' && m.data.publish).sort((a,b)=>b.data.date_received.localeCompare(a.data.date_received));
+---
+<BaseLayout title="Memórias — Ivo Wittmann"><section class="container hero"><div class="eyebrow">Relatos longos</div><h1>Memórias</h1><p class="lead">Histórias completas compartilhadas por familiares e amigos.</p></section><section class="container grid">{memories.map(async (m) => { const { Content } = await m.render(); return <article class="card content"><h2 class="serif">{m.data.title}</h2><p class="meta">Por {m.data.show_author_name ? m.data.author : 'Autor não divulgado'} · {m.data.relationship}</p><Content /></article>})}</section></BaseLayout>

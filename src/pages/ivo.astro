@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PersonHero from '../components/PersonHero.astro';
+import { url } from '../lib/paths';
+const person = (await getCollection('people')).find((entry) => entry.data.id === 'ivo-wittmann');
+if (!person) throw new Error('Pessoa ivo-wittmann não encontrada.');
+const { Content } = await person.render();
+const links = [ ['História de vida','/ivo/historia'], ['Fotos','/ivo/fotos'], ['Vídeos','/ivo/videos'], ['Áudios','/ivo/audios'], ['Memórias','/ivo/memorias'], ['Livro de visitas','/ivo/livro-de-visitas'], ['Linha do tempo','/ivo/linha-do-tempo'], ['Enviar memória','/enviar'] ];
+---
+<BaseLayout title="Memorial de Ivo Amandio Wittmann">
+  <PersonHero person={person}><Content /></PersonHero>
+  <section class="container section grid grid-2">
+    <div class="card"><h2 class="serif">Navegue pelo memorial</h2><div class="list-links">{links.map(([label, href]) => <a href={url(href)}><span>{label}</span><strong>→</strong></a>)}</div></div>
+    <div class="card"><h2 class="serif">Como contribuir</h2><p>Todo conteúdo enviado por visitantes é recebido como submissão privada e precisa de revisão humana antes de aparecer no site.</p><p><a class="button" href={url('/enviar')}>Enviar uma contribuição</a></p></div>
+  </section>
+</BaseLayout>

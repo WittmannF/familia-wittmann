@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import { url } from '../lib/paths';
+const { title = 'Família Wittmann', description = 'Memórias, histórias, fotos e registros da Família Wittmann.' } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href={url('/')}>Família Wittmann</a>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href={url('/ivo')}>Memorial de Ivo</a>
+          <a href={url('/qr/ivo')}>QR</a>
+          <a href={url('/enviar')}>Enviar memória</a>
+          <a href={url('/familia')}>Família</a>
+          <a href={url('/sobre')}>Sobre</a>
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <div class="container">Família Wittmann · site público, discreto e revisado manualmente antes de publicar novas contribuições.</div>
+    </footer>
+  </body>
+</html>
