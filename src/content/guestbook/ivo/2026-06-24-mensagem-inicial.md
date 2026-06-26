@@ -1,6 +1,6 @@
 ---
 person: "ivo-wittmann"
-author: "Família Wittmann"
+author: "Familiares"
 city: ""
 relationship: "Família"
 date_received: "2026-06-24"

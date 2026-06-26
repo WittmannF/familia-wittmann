@@ -1,6 +1,8 @@
-# Família Wittmann
+# Memorial de Ivo Amandio Wittmann
 
-Site memorial/familiar estático para preservar memórias, histórias, fotos e registros da Família Wittmann. A primeira versão começa pelo memorial de **Ivo / Ivo Amandio Wittmann**.
+Site estático para preservar memórias, histórias, fotos e mensagens de **Ivo / Ivo Amandio Wittmann**.
+
+A versão atual foi simplificada: em vez de ser um site amplo da Família Wittmann, a experiência pública agora é focada apenas no memorial do Ivo. A estrutura técnica ainda é durável e permite expansão futura, mas a navegação e o texto principal evitam parecer um projeto genealógico ou familiar maior.
 
 > O repositório pode ser público para compartilhar uma prévia. O site foi configurado com `noindex`, `robots.txt` e `X-Robots-Tag`, mas isso **não é privacidade real**. Não publique documentos pessoais, dados sensíveis ou informações de pessoas vivas sem consentimento.
 
@@ -37,7 +39,7 @@ GITHUB_PAGES=1 npm run build
 
 ## Rotas principais
 
-- `/` — página inicial Família Wittmann
+- `/` — entrada simplificada do memorial do Ivo
 - `/ivo` — memorial principal de Ivo Amandio Wittmann
 - `/ivo-amandio` — redireciona para `/ivo`
 - `/qr/ivo` — página mobile-first para QR code na lápide
@@ -49,8 +51,8 @@ GITHUB_PAGES=1 npm run build
 - `/ivo/livro-de-visitas` — mensagens curtas
 - `/ivo/linha-do-tempo` — eventos importantes
 - `/enviar` — formulário de contribuições
-- `/familia` — expansão futura: genealogia, imigração, Andreas Wittmann
 - `/sobre` — objetivo, contribuição, privacidade e contato
+- `/familia` — redireciona para `/ivo` para manter compatibilidade com links antigos
 
 ## Estrutura de conteúdo
 
@@ -63,7 +65,6 @@ src/content/
   photos/ivo/
   videos/ivo/
   audio/ivo/
-  family-history/andreas-wittmann.md
 public/images/
   people/ivo/
   submissions/ivo/
@@ -73,17 +74,6 @@ scripts/import-submission.ts
 ```
 
 O site renderiza apenas conteúdo com `publish: true`. Conteúdo importado de submissões nasce com `publish: false`.
-
-## Criar um novo memorial
-
-1. Crie uma pessoa em `src/content/people/nome-sobrenome.md`.
-2. Use um `id` estável, por exemplo `maria-wittmann`.
-3. Crie páginas ou rotas equivalentes, ou generalize as páginas atuais de `/ivo`.
-4. Crie pastas de conteúdo por pessoa:
-   - `src/content/memories/maria/`
-   - `src/content/guestbook/maria/`
-   - `src/content/photos/maria/`
-5. Só publique entradas com `publish: true` após revisão familiar.
 
 ## Adicionar uma memória manualmente
 
@@ -128,7 +118,7 @@ r2://familiawittmann-submissions/inbox/YYYY-MM-DD/sub_<id>/original/arquivo.ext
 
 5. A Function dispara o workflow `import-submission.yml`.
 6. O GitHub Action baixa a submissão, processa mídia simples, gera Markdown com `publish: false` e abre uma Pull Request.
-7. A família revisa a PR; somente após alterar para `publish: true` e fazer merge o conteúdo aparece.
+7. O conteúdo é revisado; somente após alterar para `publish: true` e fazer merge ele aparece.
 
 ## Limites e tipos de upload
 
@@ -147,7 +137,7 @@ A primeira versão bloqueia SVG, HTML, ZIP, executáveis e arquivos desconhecido
 3. Output directory: `dist`
 4. Configure as variáveis/secrets abaixo.
 5. Conecte a Function em `functions/api/submit.ts`.
-6. Configure o domínio `familiawittmann.com.br` quando o DNS estiver pronto.
+6. Configure o domínio final quando o DNS estiver pronto.
 
 ## Configurar R2
 
@@ -221,10 +211,11 @@ A rota preparada é:
 https://familiawittmann.com.br/qr/ivo
 ```
 
-Quando o domínio estiver apontado, gere o QR code final usando essa URL. Não gere o QR definitivo com URL temporária de GitHub Pages.
+Não gere o QR final até o domínio estar definido. Depois, gere apontando para essa rota.
 
-## Observações de privacidade
+## Cuidados de privacidade
 
-- `noindex` e `robots.txt` reduzem indexação, mas não impedem acesso público.
-- Não publique CPF, RG, endereço, telefone pessoal, documentos sensíveis ou dados de pessoas vivas sem consentimento.
-- Prefira fotos e histórias familiares consensuais e respeitosas.
+- Não publique documentos pessoais sem necessidade.
+- Evite dados de pessoas vivas.
+- Prefira fotos e histórias consensuais e respeitosas.
+- Lembre que `noindex` ajuda contra mecanismos de busca, mas não torna o site privado.

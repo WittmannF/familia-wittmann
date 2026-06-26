@@ -1,7 +1,7 @@
 ---
 person: "ivo-wittmann"
 title: "Uma lembrança para começar"
-author: "Família Wittmann"
+author: "Familiares"
 relationship: "Família"
 date_received: "2026-06-24"
 memory_date: ""

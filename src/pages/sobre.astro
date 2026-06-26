@@ -2,4 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { url } from '../lib/paths';
 ---
-<BaseLayout title="Sobre — Família Wittmann"><section class="container hero content"><div class="eyebrow">Sobre o projeto</div><h1>Sobre</h1><p class="lead">O site Família Wittmann foi criado para preservar memórias, histórias, fotos e mensagens com respeito, simplicidade e revisão humana.</p><h2>Como contribuir</h2><p>Use a página <a href={url('/enviar')}>Enviar memória</a> ou envie pelo WhatsApp indicado no formulário.</p><h2>Revisão antes da publicação</h2><p>Nada é publicado automaticamente. Contribuições entram como submissões privadas e devem virar Pull Requests com <code>publish: false</code> para revisão da família.</p><h2>Privacidade</h2><p>O site usa <code>noindex</code> e <code>robots.txt</code> para reduzir indexação, mas isso não é privacidade real. Conteúdos sensíveis, documentos pessoais e dados de pessoas vivas devem ficar fora do site público.</p><h2>Contato</h2><p>Entre em contato com Fernando pelo WhatsApp: <a href="https://wa.me/5519987211302">(19) 98721-1302</a>.</p></section></BaseLayout>
+<BaseLayout title="Sobre — Memorial de Ivo Amandio Wittmann">
+  <section class="container hero content">
+    <div class="eyebrow">Sobre o memorial</div>
+    <h1>Um site simples para lembrar do Ivo</h1>
+    <p class="lead">Este memorial foi criado para reunir histórias, fotos, mensagens e lembranças de Ivo Amandio Wittmann em um espaço sóbrio, leve e fácil de manter.</p>
+    <h2>Como contribuir</h2>
+    <p>Use a página <a href={url('/enviar')}>Enviar memória</a> ou envie pelo WhatsApp indicado no formulário.</p>
+    <h2>Revisão antes da publicação</h2>
+    <p>Nada é publicado automaticamente. Contribuições entram como submissões privadas e devem virar Pull Requests com <code>publish: false</code> para revisão antes de aparecer no site.</p>
+    <h2>Escopo atual</h2>
+    <p>Por enquanto o projeto foi simplificado para ser apenas o memorial do Ivo. A estrutura ainda permite evoluir no futuro, mas a experiência pública não tenta mais ser um site amplo da família.</p>
+    <h2>Privacidade</h2>
+    <p>O site usa <code>noindex</code> e <code>robots.txt</code> para reduzir indexação, mas isso não é privacidade real. Conteúdos sensíveis, documentos pessoais e dados de pessoas vivas devem ficar fora do site público.</p>
+    <h2>Contato</h2>
+    <p>Entre em contato com Fernando pelo WhatsApp: <a href="https://wa.me/5519987211302">(19) 98721-1302</a>.</p>
+  </section>
+</BaseLayout>

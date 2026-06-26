@@ -1,17 +1,13 @@
 ---
-import { asset, url } from '../lib/paths';
+import { url } from '../lib/paths';
 const { person } = Astro.props;
 ---
-<section class="container hero memorial-hero">
+<section class="container hero person-hero">
+  <div class="portrait"><img src={url(person.data.cover_image)} alt={`Foto de ${person.data.name}`} /></div>
   <div>
-    <div class="eyebrow">Memorial familiar</div>
+    <div class="eyebrow">Memorial</div>
     <h1>{person.data.full_name}</h1>
-    <p class="meta">{person.data.birth_date || 'Nascimento a confirmar'} — {person.data.death_date || 'Falecimento a confirmar'}</p>
-    <div class="lead"><slot /></div>
-    <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px">
-      <a class="button" href={url('/ivo/historia')}>Ver história de vida</a>
-      <a class="button secondary" href={url('/enviar')}>Enviar memória</a>
-    </p>
+    <p class="dates">{person.data.birth_date || 'Nascimento a confirmar'} — {person.data.death_date || 'Falecimento a confirmar'}</p>
+    <div class="content"><slot /></div>
   </div>
-  <figure class="portrait"><img src={asset(person.data.cover_image)} alt={`Foto principal de ${person.data.full_name}`} /></figure>
 </section>

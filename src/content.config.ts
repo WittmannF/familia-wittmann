@@ -49,6 +49,4 @@ const photos = defineCollection({
 });
 const videos = defineCollection({ type: 'content', schema: z.object({ person: z.string(), title: z.string(), date: z.string().default(''), description: z.string().default(''), src: z.string(), publish: z.boolean().default(false) }) });
 const audio = defineCollection({ type: 'content', schema: z.object({ person: z.string(), title: z.string(), date: z.string().default(''), description: z.string().default(''), src: z.string(), publish: z.boolean().default(false) }) });
-const familyHistory = defineCollection({ type: 'content', schema: z.object({ title: z.string(), slug: z.string().optional(), publish: z.boolean().default(false) }) });
-
-export const collections = { people, memories, guestbook, timeline, photos, videos, audio, 'family-history': familyHistory };
+export const collections = { people, memories, guestbook, timeline, photos, videos, audio };
