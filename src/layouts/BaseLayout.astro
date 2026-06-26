@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { url } from '../lib/paths';
-const { title = 'Memorial de Ivo Amandio Wittmann', description = 'Memorial de Ivo Amandio Wittmann: histórias, fotos, mensagens e lembranças reunidas com carinho.' } = Astro.props;
+const { title = 'Família Wittmann', description = 'Memórias, histórias, fotos e registros da Família Wittmann.' } = Astro.props;
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -16,20 +16,19 @@ const { title = 'Memorial de Ivo Amandio Wittmann', description = 'Memorial de I
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href={url('/')}>Ivo Amandio Wittmann</a>
+        <a class="brand" href={url('/')}>Família Wittmann</a>
         <nav class="nav-links" aria-label="Navegação principal">
-          <a href={url('/ivo')}>Memorial</a>
-          <a href={url('/ivo/fotos')}>Fotos</a>
-          <a href={url('/ivo/livro-de-visitas')}>Livro de visitas</a>
+          <a href={url('/ivo')}>Memorial de Ivo</a>
           <a href={url('/qr/ivo')}>QR</a>
           <a href={url('/enviar')}>Enviar memória</a>
+          <a href={url('/familia')}>Família</a>
           <a href={url('/sobre')}>Sobre</a>
         </nav>
       </div>
     </header>
     <main><slot /></main>
     <footer class="site-footer">
-      <div class="container">Memorial de Ivo Amandio Wittmann · espaço público, discreto e revisado manualmente antes de publicar novas contribuições.</div>
+      <div class="container">Família Wittmann · site público, discreto e revisado manualmente antes de publicar novas contribuições.</div>
     </footer>
   </body>
 </html>

@@ -3,19 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CardLink from '../components/CardLink.astro';
 import { url } from '../lib/paths';
 ---
-<BaseLayout title="Memorial de Ivo Amandio Wittmann" description="Um memorial simples e respeitoso para Ivo Amandio Wittmann, com histórias, fotos, mensagens e lembranças.">
+<BaseLayout title="Família Wittmann">
   <section class="container hero">
-    <div class="eyebrow">Memorial de Ivo Amandio Wittmann</div>
-    <h1>Um lugar para guardar lembranças do Ivo</h1>
-    <p class="lead">Este site reúne, com calma e respeito, histórias, fotos, mensagens e registros sobre Ivo Amandio Wittmann. A ideia agora é ser um memorial simples para ele — fácil de compartilhar, leve no celular e sem virar um projeto maior de árvore ou site da família.</p>
-    <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="button" href={url('/ivo')}>Entrar no memorial</a><a class="button secondary" href={url('/enviar')}>Enviar uma lembrança</a></p>
+    <div class="eyebrow">Memórias, histórias e registros familiares</div>
+    <h1>Família Wittmann</h1>
+    <p class="lead">Um espaço simples e durável para reunir memórias, histórias, fotos e registros familiares. Começamos com o memorial de Ivo Amandio Wittmann, preparado para crescer com novas páginas, árvore genealógica e história da família.</p>
+    <p style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="button" href={url('/ivo')}>Conhecer o memorial de Ivo</a><a class="button secondary" href={url('/enviar')}>Enviar memória</a></p>
   </section>
   <section class="container section grid grid-3">
-    <CardLink href={url('/ivo/historia')} title="História de vida" text="Um texto de homenagem organizado por fases e lembranças importantes." />
-    <CardLink href={url('/ivo/fotos')} title="Fotos" text="Galeria com fotos publicadas somente depois de revisão." />
+    <CardLink href={url('/ivo')} title="Memorial de Ivo" text="Homenagem, história de vida, fotos, mensagens e lembranças." />
+    <CardLink href={url('/ivo/fotos')} title="Fotos" text="Galeria com fotos publicadas após revisão da família." />
     <CardLink href={url('/ivo/livro-de-visitas')} title="Livro de visitas" text="Mensagens curtas, orações e registros de carinho." />
-    <CardLink href={url('/ivo/memorias')} title="Memórias" text="Relatos mais longos compartilhados por familiares e amigos." />
-    <CardLink href={url('/ivo/linha-do-tempo')} title="Linha do tempo" text="Marcos da vida do Ivo, preenchidos aos poucos." />
-    <CardLink href={url('/qr/ivo')} title="Página do QR" text="Versão leve para o futuro QR code da lápide." />
+    <CardLink href={url('/enviar')} title="Enviar memória" text="Formulário para relatos, fotos, áudios, vídeos e documentos." />
+    <CardLink href={url('/ivo/memorias')} title="Memórias" text="Relatos mais longos enviados por familiares e amigos." />
+    <CardLink href={url('/familia')} title="História da família" text="Espaço futuro para genealogia, imigração e origem Wittmann." />
   </section>
 </BaseLayout>
