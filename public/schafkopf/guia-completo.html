@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schafkopf com Baralho Comum — Guia Completo</title>
+<style>
+:root{
+  --bg:#f7f5f0; --card:#fff; --ink:#222; --muted:#666; --line:#d7d2c8;
+  --accent:#365d49; --accent2:#765f29; --warn:#fff8e5; --red:#c62828;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+main{max-width:960px;margin:auto;padding:32px 20px 72px}
+h1{font-size:2.3rem;line-height:1.1;margin-bottom:.4rem}
+h2{margin-top:2.3rem;border-bottom:1px solid var(--line);padding-bottom:.3rem}
+h3{margin-top:1.5rem}
+.lead{font-size:1.08rem;color:#444}
+.box,.ex,.note,.warn{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:18px 0}
+.ex{border-left:5px solid var(--accent)}
+.note{border-left:5px solid var(--accent2)}
+.warn{background:var(--warn);border-left:5px solid #a47400}
+table{width:100%;border-collapse:collapse;background:#fff;margin:16px 0}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece9e2}
+.big{font-size:1.12rem;font-weight:700}
+.good{color:#19633b;font-weight:700}
+.bad{color:#922f2f;font-weight:700}
+.quick{background:#222;color:#fff;border-radius:14px;padding:20px;margin-top:30px}
+.quick h2{border:0;margin-top:0}
+.quick table{color:#222}
+.muted{color:var(--muted)}
+ul,ol{padding-left:1.4rem}
+.suit-black{color:#111;font-weight:700}
+.suit-red{color:var(--red);font-weight:700}
+.cardline{font-size:1.12rem;font-weight:700;line-height:1.9}
+@media print{
+  body{background:#fff;font-size:13px}
+  .box,.ex,.note,.warn,.quick,table{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main>
+
+<h1>Schafkopf com Baralho Comum</h1>
+<p class="lead">Guia passo a passo para 4 jogadores usando um baralho tradicional de 52 cartas.</p>
+
+<div class="note"><strong>Prepare o baralho:</strong> use somente Ás, 10, Rei, Dama, Valete, 9, 8 e 7 de cada naipe. Retire 2, 3, 4, 5 e 6. Você ficará com 32 cartas.</div>
+<div class="note"><strong>Modo deste guia:</strong> as regras de vazas, trunfos, Ás chamado e vitória seguem o jogo tradicional. Para a <strong>primeira sessão</strong>, o guia usa uma negociação simplificada: Rufspiel e Solo. Isso evita introduzir Wenz, Farbwenz, Tout e outros contratos antes de você dominar o básico.</div>
+
+<h2>0. Antes da primeira mão: prepare a mesa</h2>
+<ol>
+<li><strong>Escolham o primeiro carteador:</strong> cada jogador tira uma carta do baralho completo antes de separar as 32 cartas. Quem tirar a carta mais alta será o primeiro carteador, usando a ordem Ás &gt; Rei &gt; Dama &gt; Valete &gt; 10 &gt; 9 &gt; ... &gt; 2. Em caso de empate, apenas os empatados tiram novamente.</li>
+<li>Definam a ordem física da mesa e mantenham essa sequência durante toda a sessão. Exemplo: <strong>Ana → Bruno → Carlos → Você → Ana</strong>. Sentem-se nessa mesma ordem; ela será também a ordem de jogo.</li>
+<li>Separem as 32 cartas do Schafkopf, embaralhem e, se quiserem, o jogador anterior ao carteador pode cortar o baralho. O corte é opcional neste guia.</li>
+<li>Distribuam <strong>8 cartas para cada jogador</strong>. Para aprender, pode distribuir uma a uma. A distribuição tradicional em blocos não muda as regras da mão.</li>
+<li>Se alguém terminar com número errado de cartas, <strong>recolham todas as cartas, embaralhem e distribuam novamente</strong>.</li>
+<li>O jogador que vem <strong>logo depois do carteador na ordem da mesa</strong> será o primeiro a falar na declaração e também abrirá a primeira vaza.</li>
+<li>Depois de cada mão, o papel de carteador passa para o <strong>próximo jogador na mesma ordem</strong>.</li>
+</ol>
+<div class="ex"><strong>Exemplo:</strong> ordem da mesa: Ana → Bruno → Carlos → Você → Ana.<br>
+Ana distribui. Bruno vem logo depois de Ana, portanto Bruno fala primeiro e abre a primeira vaza. Na mão seguinte, Bruno será o carteador.</div>
+
+
+<div class="note"><strong>Termo importante — trunfo:</strong> uma carta de trunfo vence qualquer carta de naipe comum. Entre dois trunfos, vence o trunfo mais alto. A lista completa de trunfos aparece na Seção 6.</div>
+
+<h2>1. Objetivo da mão</h2>
+<p>Cada mão tem <strong>8 vazas</strong>. Cada vaza contém uma carta de cada jogador. O objetivo é capturar cartas que valem pontos.</p>
+
+<table>
+<tr><th>Carta</th><th>Pontos</th></tr>
+<tr><td>Ás</td><td>11</td></tr>
+<tr><td>10</td><td>10</td></tr>
+<tr><td>Rei</td><td>4</td></tr>
+<tr><td>Dama</td><td>3</td></tr>
+<tr><td>Valete</td><td>2</td></tr>
+<tr><td>9, 8 e 7</td><td>0</td></tr>
+</table>
+
+<p>Existem <strong>120 pontos</strong> no total.</p>
+
+<div class="ex"><strong>Exemplo:</strong> uma vaza com
+<span class="suit-black">A♣</span>,
+<span class="suit-black">10♣</span>,
+<span class="suit-black">K♣</span> e
+<span class="suit-black">7♣</span>
+vale 11 + 10 + 4 + 0 = <strong>25 pontos</strong>.</div>
+
+<h2>2. As equipes mudam a cada mão</h2>
+<p>No modo principal, o <strong>Rufspiel</strong>, joga-se 2 contra 2. Um jogador é o <strong>declarante</strong>. Ele chama um parceiro por meio de um Ás.</p>
+
+<div class="box big">“Jogo com a pessoa que tiver o Ás de Paus.”</div>
+
+<p>Quem tiver <span class="suit-black">A♣</span> vira automaticamente parceiro do declarante.</p>
+
+<h2>3. Como decidimos quem será o declarante?</h2>
+<p>O <strong>declarante</strong> é o jogador que assume um contrato. No Rufspiel, somente ele chama o parceiro.</p>
+
+<h3>Antes de declarar: posso jogar Rufspiel?</h3>
+<p>Antes de dizer “Quero Rufspiel”, faça este teste rápido:</p>
+<div class="box">
+<strong>Tenho pelo menos um destes casos?</strong><br>
+• alguma carta comum de Paus, mas não <span class="suit-black">A♣</span>;<br>
+• alguma carta comum de Espadas, mas não <span class="suit-black">A♠</span>;<br>
+• alguma carta comum de Ouros, mas não <span class="suit-red">A♦</span>.<br><br>
+Se a resposta for <strong>sim</strong>, existe pelo menos um parceiro que você pode chamar.<br>
+Se a resposta for <strong>não</strong>, você <strong>não pode declarar Rufspiel</strong>.
+</div>
+
+<div class="note"><strong>Nas primeiras 3 mãos:</strong> usem apenas <strong>“Passo”</strong> ou <strong>“Quero Rufspiel”</strong>. A partir da <strong>4ª mão jogada</strong>, adicionem Solo.</div>
+
+<h3>Negociação simplificada</h3>
+<p>Começando pelo jogador que vem logo depois do carteador na ordem da mesa e seguindo essa mesma ordem, cada jogador diz uma destas opções:</p>
+
+<table>
+<tr><th>Fala</th><th>Significado</th></tr>
+<tr><td><strong>“Passo.”</strong></td><td>Não quero declarar esta mão.</td></tr>
+<tr><td><strong>“Quero Rufspiel.”</strong></td><td>Quero jogar em dupla chamando um Ás.</td></tr>
+<tr><td><strong>“Quero Solo.”</strong></td><td>Quero jogar sozinho contra os outros três. <em>Adicione esta opção somente depois das primeiras 3 mãos.</em></td></tr>
+</table>
+
+<p>Para este modo de aprendizado, use estas prioridades:</p>
+<div class="box big">Solo &gt; Rufspiel &gt; Passar</div>
+
+<ul>
+<li>Se somente uma pessoa quiser jogar, ela é o declarante.</li>
+<li>A rodada de declaração <strong>sempre continua até os quatro jogadores terem falado</strong>, mesmo que alguém já tenha declarado Solo.</li>
+<li>Depois que Solo tiver sido introduzido, <strong>Solo tem prioridade sobre Rufspiel</strong>.</li>
+<li>Se duas ou mais pessoas quiserem <strong>Solo</strong>, fica com ele quem declarou Solo primeiro.</li>
+<li>Se duas ou mais pessoas quiserem <strong>Rufspiel</strong> e ninguém declarar Solo, fica com ele quem declarou Rufspiel primeiro.</li>
+<li>Depois que um jogador diz <strong>“Passo”</strong>, não pode voltar atrás naquela mão.</li>
+<li>Se todos disserem “Passo”, recolham as cartas sem jogar, o próximo jogador vira carteador e uma nova mão é distribuída.</li>
+<li>Uma distribuição em que todos passaram <strong>não conta</strong> para o total combinado de mãos jogadas.</li>
+</ul>
+
+<div class="ex"><strong>Exemplo A:</strong><br>
+Bruno: “Passo.”<br>
+Carlos: “Quero Rufspiel.”<br>
+Você: “Passo.”<br>
+Ana: “Passo.”<br><br>
+Carlos é o declarante.</div>
+
+<div class="ex"><strong>Exemplo B:</strong><br>
+Bruno: “Quero Rufspiel.”<br>
+Carlos: “Passo.”<br>
+Você: “Quero Solo.”<br>
+Ana: “Passo.”<br><br>
+Você é o declarante porque, neste modo introdutório, Solo tem prioridade sobre Rufspiel.</div>
+
+<div class="ex"><strong>Exemplo C:</strong><br>
+Bruno: “Quero Rufspiel.”<br>
+Carlos: “Quero Rufspiel.”<br>
+Você e Ana passam.<br><br>
+Bruno fica com o Rufspiel porque falou primeiro.</div>
+
+<div class="warn"><strong>Nota:</strong> a negociação completa do Schafkopf tradicional possui mais contratos e uma hierarquia própria. Este procedimento é propositalmente reduzido para uma primeira sessão.</div>
+
+<h2>4. Como funciona a chamada do Ás</h2>
+<p>O declarante pode chamar o Ás de <strong>Paus, Espadas ou Ouros</strong>. Copas não é chamado no Rufspiel porque Copas é trunfo.</p>
+
+<p><strong>Importante: primeiro entenda o que conta como “carta daquele naipe”.</strong> Damas e Valetes são trunfos, portanto o símbolo impresso neles não conta para esta regra. Assim, <span class="suit-black">Q♣</span> não conta como Paus e <span class="suit-black">J♠</span> não conta como Espadas.</p>
+<table>
+<tr><th>Naipe</th><th>Cartas que contam como cartas comuns</th><th>Pode ser chamado?</th></tr>
+<tr><td><span class="suit-black">♣ Paus</span></td><td>A, 10, K, 9, 8, 7</td><td>Sim</td></tr>
+<tr><td><span class="suit-black">♠ Espadas</span></td><td>A, 10, K, 9, 8, 7</td><td>Sim</td></tr>
+<tr><td><span class="suit-red">♦ Ouros</span></td><td>A, 10, K, 9, 8, 7</td><td>Sim</td></tr>
+<tr><td><span class="suit-red">♥ Copas</span></td><td>—</td><td>Não no Rufspiel: Copas é trunfo</td></tr>
+</table>
+<p>Para chamar um Ás:</p>
+<ol>
+<li>você <strong>não pode ter esse Ás</strong>;</li>
+<li>você precisa ter <strong>pelo menos uma carta comum daquele naipe</strong>.</li>
+</ol>
+
+<div class="ex"><strong>Exemplo 1:</strong><br>
+Sua mão:
+<span class="suit-black">10♣</span>,
+<span class="suit-black">8♣</span>,
+<span class="suit-black">A♠</span>,
+<span class="suit-black">9♠</span>,
+<span class="suit-red">A♦</span>,
+<span class="suit-red">Q♥</span>,
+<span class="suit-black">J♠</span>,
+<span class="suit-red">7♥</span>.<br>
+<span class="suit-black">A♣</span>: <span class="good">pode chamar</span> — tem Paus e não tem A♣.<br>
+<span class="suit-black">A♠</span>: <span class="bad">não pode</span> — está na sua mão.<br>
+<span class="suit-red">A♦</span>: <span class="bad">não pode</span> — está na sua mão.<br><br>
+Você anuncia: <strong>“Jogo com a pessoa que tiver o Ás de Paus.”</strong></div>
+
+<div class="ex"><strong>Exemplo 2:</strong><br>
+Sua mão:
+<span class="suit-black">10♣</span>,
+<span class="suit-black">8♣</span>,
+<span class="suit-black">10♠</span>,
+<span class="suit-black">7♠</span>,
+<span class="suit-red">A♦</span>,
+<span class="suit-red">Q♥</span>,
+<span class="suit-black">J♣</span>,
+<span class="suit-red">9♥</span>.<br>
+Você pode chamar <span class="suit-black">A♣</span> ou <span class="suit-black">A♠</span>. Não pode chamar <span class="suit-red">A♦</span> porque já o possui.</div>
+
+<div class="ex"><strong>Exemplo 3:</strong><br>
+Você tem <span class="suit-black">A♣</span>. Então não pode chamar A♣. O dono do Ás seria você mesmo.</div>
+
+<div class="ex"><strong>Exemplo 4:</strong><br>
+Você não tem <span class="suit-black">A♣</span>, mas também não tem nenhuma carta comum de Paus. Nesse caso, não pode chamar A♣.</div>
+
+<div class="ex"><strong>Exemplo 5 — todos os Ases:</strong><br>
+Você tem <span class="suit-black">A♣</span>, <span class="suit-black">A♠</span>, <span class="suit-red">A♥</span> e <span class="suit-red">A♦</span>. Não pode declarar Rufspiel, porque não existe um Ás elegível na mão de outra pessoa. Você pode passar ou declarar Solo.</div>
+
+<div class="note"><strong>Se puder chamar mais de um Ás:</strong> nas primeiras partidas, não se preocupe em encontrar a escolha “perfeita”. Qualquer opção legal permite jogar. A estratégia de escolher o melhor naipe pode ser aprendida depois.</div>
+
+<div class="note"><strong>“Como sei se minha mão é boa o bastante para declarar?”</strong> Isso é estratégia, não uma condição formal. Nas primeiras partidas, experimente declarar Rufspiel quando tiver vários trunfos e/ou cartas altas. Para Solo, seja mais conservador: você estará sozinho contra três jogadores.</div>
+
+<h2>5. O parceiro pode ficar escondido — e o Ás chamado tem regras especiais</h2>
+<p>Se você chama <span class="suit-black">A♣</span> e Bruno tem A♣, as equipes são Você + Bruno contra Ana + Carlos. Bruno <strong>não anuncia</strong> que é seu parceiro.</p>
+
+<ul>
+<li>Você sabe que um dos três é seu parceiro.</li>
+<li>Bruno sabe imediatamente que joga com você.</li>
+<li>Ana e Carlos sabem que não são seu parceiro.</li>
+<li>A identidade de Bruno normalmente fica evidente quando o Ás chamado aparece. Existe uma exceção avançada explicada no final do guia; ignore-a nas primeiras partidas.</li>
+</ul>
+
+<h3>Quando o naipe do Ás chamado é aberto</h3>
+<p>Se alguém abrir a vaza com o naipe do Ás chamado, o parceiro <strong>é obrigado a jogar o Ás chamado</strong>.</p>
+
+<div class="ex">Você chamou <span class="suit-black">A♣</span>.<br>
+Ana abre com <span class="suit-black">10♣</span>.<br>
+Bruno possui <span class="suit-black">A♣</span> e <span class="suit-black">7♣</span>.<br><br>
+Bruno <strong>não pode escolher 7♣ para continuar escondido</strong>. Ele deve jogar <span class="suit-black">A♣</span>.</div>
+
+<h3>O parceiro pode simplesmente descartar o Ás em outra vaza?</h3>
+<p><strong>Não.</strong> Enquanto o naipe chamado ainda não tiver sido revelado, o Ás chamado não pode ser descartado em uma vaza de outro naipe. Se ninguém abrir o naipe chamado durante a mão, o Ás fica preso até a <strong>oitava e última vaza</strong>.</p>
+
+<h3>O parceiro pode abrir o próprio Ás?</h3>
+<p><strong>Sim.</strong> Se for a vez dele abrir uma vaza, ele pode abrir diretamente com o Ás chamado e revelar a parceria.</p>
+
+<div class="note"><strong>Primeira sessão:</strong> ignore qualquer exceção avançada ao Ás chamado. Use somente a regra acima: se o naipe chamado for aberto, o dono joga o Ás; o Ás não pode ser descartado em outro naipe. Se esse naipe nunca aparecer, o Ás acabará sendo jogado na última vaza quando for a única carta restante.</div>
+
+<h2>6. Trunfos no Rufspiel</h2>
+<p>Damas e Valetes são trunfos, assim como todas as demais cartas de Copas. Portanto, existem <strong>14 trunfos</strong> no Rufspiel.</p>
+
+<div class="box cardline">
+<span class="suit-black">Q♣</span> &gt;
+<span class="suit-black">Q♠</span> &gt;
+<span class="suit-red">Q♥</span> &gt;
+<span class="suit-red">Q♦</span> &gt;<br>
+<span class="suit-black">J♣</span> &gt;
+<span class="suit-black">J♠</span> &gt;
+<span class="suit-red">J♥</span> &gt;
+<span class="suit-red">J♦</span> &gt;<br>
+<span class="suit-red">A♥</span> &gt;
+<span class="suit-red">10♥</span> &gt;
+<span class="suit-red">K♥</span> &gt;
+<span class="suit-red">9♥</span> &gt;
+<span class="suit-red">8♥</span> &gt;
+<span class="suit-red">7♥</span>
+</div>
+
+<div class="warn">
+<span class="suit-black">Q♣</span> não conta como Paus.
+<span class="suit-black">J♠</span> não conta como Espadas.
+Essas cartas são trunfos.
+</div>
+<h3>Ordem das cartas que não são trunfos</h3>
+<table>
+<tr><th>Naipe</th><th>Da maior para a menor</th></tr>
+<tr><td><span class="suit-black">Paus ♣</span></td><td><span class="suit-black">A♣ &gt; 10♣ &gt; K♣ &gt; 9♣ &gt; 8♣ &gt; 7♣</span></td></tr>
+<tr><td><span class="suit-black">Espadas ♠</span></td><td><span class="suit-black">A♠ &gt; 10♠ &gt; K♠ &gt; 9♠ &gt; 8♠ &gt; 7♠</span></td></tr>
+<tr><td><span class="suit-red">Ouros ♦</span></td><td><span class="suit-red">A♦ &gt; 10♦ &gt; K♦ &gt; 9♦ &gt; 8♦ &gt; 7♦</span></td></tr>
+</table>
+<p>Copas não aparece nessa tabela porque, no Rufspiel, todas as cartas de Copas são trunfos.</p>
+
+
+<h2>7. Como funciona uma vaza</h2>
+
+<h3>Quem abre a primeira vaza?</h3>
+<p>O jogador que vem <strong>logo depois do carteador na ordem da mesa</strong> joga a primeira carta. Nas vazas seguintes, quem venceu a vaza anterior abre a próxima.</p>
+
+<ol>
+<li>O jogador da vez abre com uma carta.</li>
+<li>Os outros três jogam seguindo a ordem da mesa definida no início.</li>
+<li>Se foi aberto um <strong>naipe comum</strong> e você possui pelo menos uma carta comum desse naipe, precisa jogar uma delas.</li>
+<li>Se não possui esse naipe, pode jogar qualquer carta, inclusive um trunfo.</li>
+<li>Se foi aberto <strong>trunfo</strong> e você possui algum trunfo, precisa jogar um trunfo.</li>
+<li>Depois das quatro cartas, determine o vencedor. Ele recolhe a vaza e abre a próxima.</li>
+</ol>
+
+<div class="note"><strong>Você não é obrigado a superar a carta que está ganhando.</strong> A obrigação é seguir o naipe ou trunfo quando possível, não “subir”.</div>
+
+<div class="ex"><strong>Exemplo:</strong><br>
+Ana abre <span class="suit-black">9♠</span>.<br>
+Bruno joga <span class="suit-black">K♠</span>.<br>
+Você tem <span class="suit-black">A♠</span> e <span class="suit-black">7♠</span>.<br><br>
+Você pode jogar <strong>qualquer uma das duas</strong>. Não é obrigado a vencer com A♠.</div>
+
+<div class="ex"><strong>Dama e Valete não seguem o símbolo impresso:</strong><br>
+Ana abre <span class="suit-black">10♣</span>.<br>
+Você possui <span class="suit-black">7♣</span> e <span class="suit-black">Q♣</span>.<br><br>
+Você precisa jogar <span class="suit-black">7♣</span>. A <span class="suit-black">Q♣</span> é trunfo, não uma carta de Paus.</div>
+<div class="ex"><strong>Se você não tem o naipe, cortar é opcional:</strong><br>
+Ana abre <span class="suit-black">10♣</span>.<br>
+Você não possui nenhuma carta comum de Paus, mas possui <span class="suit-black">A♠</span> e <span class="suit-red">7♥</span>.<br><br>
+Você pode jogar <strong>qualquer uma das duas</strong>. Jogar o trunfo <span class="suit-red">7♥</span> não é obrigatório.</div>
+
+<h2>8. Quem ganha a vaza?</h2>
+<p>Se houver trunfo, vence o trunfo mais alto. Sem trunfo, vence a carta mais alta do naipe que abriu.</p>
+
+<div class="box big">
+Nos naipes comuns: Ás &gt; 10 &gt; Rei &gt; 9 &gt; 8 &gt; 7
+</div>
+
+<div class="ex"><strong>Sem trunfo:</strong><br>
+Ana <span class="suit-black">10♠</span> ·
+Bruno <span class="suit-black">A♠</span> ·
+Carlos <span class="suit-black">7♠</span> ·
+Você <span class="suit-black">K♠</span>
+→ Bruno vence.</div>
+
+<div class="ex"><strong>Com trunfo:</strong><br>
+Ana <span class="suit-black">A♠</span> ·
+Bruno <span class="suit-black">10♠</span> ·
+Carlos <span class="suit-red">7♥</span> ·
+Você <span class="suit-black">9♠</span>
+→ Carlos vence, porque <span class="suit-red">7♥</span> é trunfo.</div>
+
+<div class="ex"><strong>Dois trunfos:</strong><br>
+Ana <span class="suit-black">A♠</span> ·
+Bruno <span class="suit-red">J♦</span> ·
+Carlos <span class="suit-black">Q♠</span> ·
+Você <span class="suit-black">10♠</span>
+→ Carlos vence com <span class="suit-black">Q♠</span>.</div>
+
+<h2>9. Pontuação da mão</h2>
+<p>Depois das 8 vazas, cada equipe soma os pontos das cartas capturadas.</p>
+
+<table>
+<tr><th>Equipe</th><th>Precisa de</th></tr>
+<tr><td>Equipe do declarante</td><td><strong>61 ou mais</strong></td></tr>
+<tr><td>Defesa</td><td><strong>60 ou mais</strong></td></tr>
+</table>
+
+<div class="ex">Declarantes 61 × Defesa 59 → declarantes vencem.</div>
+<div class="ex">Declarantes 60 × Defesa 60 → <strong>defesa vence</strong>.</div><div class="note"><strong>Não existe empate:</strong> 60–60 é vitória da defesa.</div>
+
+<h2>10. Ganhar vazas não é o mesmo que ganhar a mão</h2>
+<div class="ex">Sua equipe ganha só 3 vazas: 27 + 22 + 18 pontos = <strong>67 pontos</strong>. Mesmo perdendo 5 das 8 vazas, sua equipe vence a mão.</div>
+
+<h2>11. Colocar pontos na vaza do parceiro</h2>
+<div class="ex">
+Depois que você já sabe quem é seu parceiro, ele parece estar ganhando a vaza. Você pode jogar
+<span class="suit-red">A♦</span>, que vale 11,
+em vez de <span class="suit-red">7♦</span>, que vale 0.
+Se o parceiro realmente vencer, sua equipe recebe esses 11 pontos.
+</div>
+
+<h2>12. O que acontece depois de uma mão?</h2>
+<p>O Schafkopf tradicional funciona como uma <strong>sessão</strong>. Não há obrigatoriamente “melhor de 5” ou “primeiro a 10 vitórias”. Cada mão transfere unidades entre os jogadores.</p>
+
+<p>Em casa, use <strong>fichas, fichas, grãos, feijões ou marcadores</strong>.</p>
+
+<h2>13. Sistema recomendado com fichas</h2>
+<div class="box"><strong>Cada jogador começa com 30 fichas.</strong></div>
+
+<table>
+<tr><th>Contrato</th><th>Valor</th></tr>
+<tr><td>Rufspiel</td><td>1 ficha</td></tr>
+<tr><td>Solo</td><td>2 fichas</td></tr>
+</table>
+
+<h3>Rufspiel ganho</h3>
+<p>Você + Ana vencem Bruno + Carlos. Cada perdedor paga 1 ficha para cada vencedor.</p>
+
+<table>
+<tr><td>Você</td><td>+2</td></tr>
+<tr><td>Ana</td><td>+2</td></tr>
+<tr><td>Bruno</td><td>−2</td></tr>
+<tr><td>Carlos</td><td>−2</td></tr>
+</table>
+
+<h3>Rufspiel perdido</h3>
+<p>Você + Ana eram a equipe declarante, mas fizeram 58 pontos.</p>
+
+<table>
+<tr><td>Você</td><td>−2</td></tr>
+<tr><td>Ana</td><td>−2</td></tr>
+<tr><td>Bruno</td><td>+2</td></tr>
+<tr><td>Carlos</td><td>+2</td></tr>
+</table>
+
+<div class="note"><strong>Se alguém ficar sem fichas:</strong> trate as fichas apenas como placar. Entregue mais marcadores a essa pessoa e anote que ela está com saldo negativo, ou simplesmente registre os saldos em papel. Ninguém é eliminado da sessão.</div>
+
+<h2>14. Solo</h2>
+<p>No Solo, o declarante joga <strong>sozinho contra os outros três</strong>. Não há parceiro chamado.</p>
+
+<p>O solista escolhe <strong>Paus, Espadas, Copas ou Ouros</strong> como naipe de trunfo. As quatro Damas e os quatro Valetes continuam acima das cartas desse naipe.</p>
+
+<div class="warn"><strong>Importante:</strong> no Solo, apenas o <strong>naipe escolhido</strong> entra como trunfo além das Damas e Valetes. Portanto, se o Solo for de Paus, Espadas ou Ouros, as cartas comuns de Copas <strong>deixam de ser trunfo</strong> e voltam a funcionar como um naipe comum, na ordem <span class="suit-red">A♥ &gt; 10♥ &gt; K♥ &gt; 9♥ &gt; 8♥ &gt; 7♥</span>.</div>
+
+<p>A regra de pontos continua igual: o solista precisa de <strong>61 ou mais pontos</strong> para vencer. Os três defensores vencem juntos com <strong>60 ou mais</strong>.</p>
+
+<div class="ex"><strong>Solo de Espadas:</strong><br>
+<span class="suit-black">Q♣</span> &gt;
+<span class="suit-black">Q♠</span> &gt;
+<span class="suit-red">Q♥</span> &gt;
+<span class="suit-red">Q♦</span> &gt;
+<span class="suit-black">J♣</span> &gt;
+<span class="suit-black">J♠</span> &gt;
+<span class="suit-red">J♥</span> &gt;
+<span class="suit-red">J♦</span> &gt;
+<span class="suit-black">A♠</span> &gt;
+<span class="suit-black">10♠</span> &gt;
+<span class="suit-black">K♠</span> &gt;
+<span class="suit-black">9♠</span> &gt;
+<span class="suit-black">8♠</span> &gt;
+<span class="suit-black">7♠</span>.
+</div>
+
+<div class="ex"><strong>Exemplo de resultado:</strong><br>
+Bruno declara Solo e faz 63 pontos.<br>
+Os três defensores juntos fazem 57.<br>
+→ Bruno vence.</div>
+
+<div class="note"><strong>Solo de Copas:</strong> a lista de trunfos é a mesma do Rufspiel. A diferença é que não existe parceiro: o solista joga sozinho contra os outros três.</div>
+<div class="ex"><strong>Exemplo — Solo de Paus:</strong><br>
+Trunfos: todas as Damas → todos os Valetes → <span class="suit-black">A♣ &gt; 10♣ &gt; K♣ &gt; 9♣ &gt; 8♣ &gt; 7♣</span>.<br><br>
+Copas agora é um naipe comum. Assim, <span class="suit-red">7♥</span> <strong>não corta</strong> uma vaza de Espadas nesse contrato.</div>
+
+
+<p>Se Solo vale 2 fichas:</p>
+
+<table>
+<tr><th>Resultado</th><th>Solista</th><th>Cada defensor</th></tr>
+<tr><td>Solista vence</td><td>+6</td><td>−2</td></tr>
+<tr><td>Solista perde</td><td>−6</td><td>+2</td></tr>
+</table>
+
+<h2>15. Como termina a sessão?</h2>
+<p>Vocês podem combinar previamente 12 mãos, 16 mãos, 1 hora ou simplesmente parar quando quiserem.</p>
+
+<div class="ex">
+Todos começam com 30 fichas. Depois de 12 mãos:<br>
+Ana 39 · Você 35 · Bruno 27 · Carlos 19.<br><br>
+Total = 120 fichas. Ana terminou com o maior saldo da sessão.
+</div>
+
+<h2>16. Exemplo completo de Rufspiel</h2>
+<div class="ex">
+<strong>Jogadores:</strong> Ana, Bruno, Carlos e você.<br><br>
+1. Cada um recebe 8 cartas.<br>
+2. Você declara Rufspiel.<br>
+3. Você tem <span class="suit-black">10♣</span> e <span class="suit-black">8♣</span>, mas não <span class="suit-black">A♣</span>.<br>
+4. Você diz: <strong>“Jogo com a pessoa que tiver o Ás de Paus.”</strong><br>
+5. Bruno tem <span class="suit-black">A♣</span> e vira seu parceiro.<br>
+6. As 8 vazas são jogadas.<br>
+7. Você captura 34 pontos e Bruno 32: equipe = 66.<br>
+8. Ana + Carlos fazem 54.<br>
+9. Sua equipe vence.<br>
+10. Ana paga 1 ficha para você e 1 para Bruno. Carlos faz o mesmo.<br><br>
+Resultado: Você +2 · Bruno +2 · Ana −2 · Carlos −2.
+</div>
+
+<h2>17. Exemplo completo de defesa vencendo</h2>
+<div class="ex">
+Ana declara Rufspiel e chama a pessoa que tiver <span class="suit-red">A♦</span>. Carlos tem <span class="suit-red">A♦</span>.<br><br>
+Equipe declaradora: Ana + Carlos.<br>
+Defesa: você + Bruno.<br><br>
+Depois das 8 vazas: 60 × 60.<br><br>
+Como o declarante precisa de 61, a defesa vence.<br><br>
+Você +2 · Bruno +2 · Ana −2 · Carlos −2.
+</div>
+
+<h2>18. Exemplo completo de Solo</h2>
+<div class="ex">
+Bruno declara Solo. O valor é 2 fichas.<br>
+Ele joga sozinho contra os outros três e faz 72 pontos.<br><br>
+Ana paga 2, Carlos paga 2 e você paga 2 para Bruno.<br><br>
+Bruno: +6.<br>
+Ana: −2.<br>
+Carlos: −2.<br>
+Você: −2.
+</div>
+
+<h2>19. Erros comuns</h2>
+<ul>
+<li>Achar que chamar um Ás significa transformá-lo em trunfo.</li>
+<li>Esquecer que o Ás chamado identifica <strong>uma pessoa</strong>.</li>
+<li>Tentar chamar um Ás que está na própria mão.</li>
+<li>Esquecer que Damas e Valetes são trunfos.</li>
+<li>Contar número de vazas em vez dos pontos capturados.</li>
+<li>Achar que 60–60 é empate: a defesa vence.</li>
+<li>Achar que as duplas continuam iguais na mão seguinte.</li>
+<li>Achar que o jogo precisa terminar ao atingir um número de vitórias.</li>
+</ul>
+
+<h2>20. Primeira sessão recomendada</h2>
+<p>Para aprender sem sobrecarregar a primeira mão:</p>
+<ol>
+<li>30 fichas por jogador.</li>
+<li>Nas <strong>primeiras 3 mãos</strong>, as únicas opções de declaração são <strong>“Rufspiel” ou “Passo”</strong>. Solo ainda não entra.</li>
+<li>Se todos passarem, redistribuam com o próximo carteador.</li>
+<li>Depois que todos entenderem vazas, trunfos e Ás chamado, adicionem Solo.</li>
+<li>Rufspiel = 1 ficha; Solo = 2 fichas.</li>
+<li>Joguem 12 mãos no total.</li>
+<li>Ignorem Schneider, Schwarz, pontuação avançada, Wenz, Farbwenz e Tout nesta primeira sessão.</li>
+<li>No fim, comparem os saldos individuais.</li>
+</ol>
+
+<h2>21. Uma mão inteira, do zero até a próxima distribuição</h2>
+<div class="ex">
+<strong>1. Carteador:</strong> Ana embaralha e distribui 8 cartas para cada pessoa.<br><br>
+<strong>2. Primeiro jogador:</strong> Bruno vem logo depois de Ana na ordem da mesa.<br><br>
+<strong>3. Declaração:</strong><br>
+Bruno: “Passo.”<br>
+Carlos: “Quero Rufspiel.”<br>
+Você: “Passo.”<br>
+Ana: “Passo.”<br>
+→ Carlos é o declarante.<br><br>
+<strong>4. Parceiro:</strong> Carlos tem <span class="suit-black">10♣</span>, mas não <span class="suit-black">A♣</span>. Ele anuncia: “Jogo com a pessoa que tiver o Ás de Paus.” Você possui <span class="suit-black">A♣</span>, então é parceiro de Carlos, mas não anuncia isso.<br><br>
+<strong>5. Primeira vaza:</strong> Bruno, por ser o próximo jogador depois da carteadora na ordem da mesa, abre a primeira carta.<br><br>
+<strong>6. Vazas seguintes:</strong> quem ganha cada vaza abre a próxima. Todos seguem naipe ou trunfo quando possível. Ninguém é obrigado a jogar uma carta maior.<br><br>
+<strong>7. Ás chamado:</strong> quando Paus é aberto, você precisa jogar <span class="suit-black">A♣</span> se ainda o tiver.<br><br>
+<strong>8. Final:</strong> depois das 8 vazas, Carlos + você somam 65 pontos. Bruno + Ana somam 55. A equipe declaradora vence.<br><br>
+<strong>9. Fichas:</strong> Bruno paga 1 para Carlos e 1 para você. Ana faz o mesmo. Carlos +2, você +2, Bruno −2, Ana −2.<br><br>
+<strong>10. Próxima mão:</strong> Bruno, que vem depois de Ana na ordem definida da mesa, vira o novo carteador. Embaralhem e recomecem.
+</div>
+
+
+<h2>22. Regra avançada opcional — Davonlaufen</h2>
+<p><strong>Não use esta regra nas primeiras partidas.</strong> Ela está aqui para quando o grupo já estiver confortável com o Rufspiel.</p>
+<p>Normalmente, o dono do Ás chamado precisa jogar esse Ás quando o naipe chamado é aberto. Existe uma exceção: se ele ainda possui o Ás e, naquele momento, tem <strong>pelo menos quatro cartas do naipe chamado contando o próprio Ás</strong>, ele pode abrir uma carta menor desse naipe. Isso é chamado <em>Davonlaufen</em>.</p>
+<div class="ex">Você chamou <span class="suit-red">A♦</span>. Carlos é seu parceiro e ainda possui
+<span class="suit-red">A♦</span>,
+<span class="suit-red">10♦</span>,
+<span class="suit-red">9♦</span> e
+<span class="suit-red">7♦</span>.<br><br>
+Se Carlos for abrir a vaza, pode abrir <span class="suit-red">7♦</span> em vez do Ás.</div>
+
+<div class="quick">
+<h2>Resumo para deixar na mesa</h2>
+
+<p><strong>Baralho:</strong> A, 10, K, Q, J, 9, 8, 7.</p>
+
+<p><strong>Pontos:</strong> A 11 · 10 10 · K 4 · Q 3 · J 2 · 9/8/7 0.</p>
+
+<p><strong>Trunfos no Rufspiel (e no Solo de Copas):</strong><br>
+<span class="suit-black">Q♣</span> &gt;
+<span class="suit-black">Q♠</span> &gt;
+<span class="suit-red">Q♥</span> &gt;
+<span class="suit-red">Q♦</span> &gt;
+<span class="suit-black">J♣</span> &gt;
+<span class="suit-black">J♠</span> &gt;
+<span class="suit-red">J♥</span> &gt;
+<span class="suit-red">J♦</span> &gt;
+<span class="suit-red">A♥</span> &gt;
+<span class="suit-red">10♥</span> &gt;
+<span class="suit-red">K♥</span> &gt;
+<span class="suit-red">9♥</span> &gt;
+<span class="suit-red">8♥</span> &gt;
+<span class="suit-red">7♥</span>.
+</p>
+
+<p><strong>Declaração:</strong> primeiras 3 mãos: Passo / Rufspiel. Depois, adicione Solo. Quando Solo estiver ativo: Solo &gt; Rufspiel; empate no mesmo contrato fica com quem falou primeiro. Todos passam → próximo carteador e nova distribuição.</p>
+<p><strong>Primeira vaza:</strong> começa o próximo jogador na ordem da mesa. Depois, o vencedor de cada vaza abre a próxima.</p>
+<p><strong>Parceiro:</strong> “Jogo com a pessoa que tiver o Ás de ___.” Você precisa ter uma carta comum do naipe e não pode possuir esse Ás.</p>
+<p><strong>Ás chamado:</strong> se o naipe chamado for aberto, o dono deve jogar o Ás. Ele não pode descartá-lo em outro naipe antes disso; pode abrir o próprio Ás. Na primeira sessão, ignore Davonlaufen.</p>
+<p><strong>Seguir:</strong> siga naipe/trunfo quando puder, mas não é obrigado a jogar uma carta maior.</p>
+
+<p><strong>Solo:</strong> Damas &gt; Valetes &gt; cartas do naipe escolhido. Se o Solo não for de Copas, Copas volta a ser naipe comum.</p>
+<p><strong>Vitória:</strong> declarantes 61+; defesa 60+.</p>
+
+<p><strong>Fichas:</strong> Rufspiel 1 · Solo 2. Cada perdedor paga o valor da mão para cada vencedor.</p>
+</div>
+
+<p class="muted">Este guia usa um baralho francês comum como substituto do baralho tradicional e simplifica alguns procedimentos avançados para facilitar o aprendizado.</p>
+
+</main>
+</body>
+</html>
