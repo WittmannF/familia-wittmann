@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/paths';
+---
+<BaseLayout
+  title="Memoriais - Família Wittmann"
+  description="Memoriais da Família Wittmann, reunindo histórias de vida, fotos, lembranças e mensagens."
+>
+  <section class="container hero content">
+    <div class="eyebrow">Memoriais</div>
+    <h1>Memoriais da família</h1>
+    <p class="lead">Páginas dedicadas a preservar histórias de vida, fotos, lembranças e mensagens de familiares queridos.</p>
+  </section>
+  <section class="container section grid grid-3">
+    <a class="card" href={url('/ivo')}>
+      <span class="tag">Memorial</span>
+      <h2 class="serif">Ivo Amandio Wittmann</h2>
+      <p>Homenagem, história de vida, fotos, mensagens e lembranças.</p>
+    </a>
+  </section>
+</BaseLayout>

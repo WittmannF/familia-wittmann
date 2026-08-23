@@ -18,18 +18,20 @@ const { title = 'Família Wittmann', description = 'Memórias, histórias, fotos
       <div class="container nav">
         <a class="brand" href={url('/')}>Família Wittmann</a>
         <nav class="nav-links" aria-label="Navegação principal">
-          <a href={url('/ivo')}>Memorial de Ivo</a>
-          <a href={url('/qr/ivo')}>QR</a>
-          <a href={url('/enviar')}>Enviar memória</a>
-          <a href={url('/schafkopf')}>Schafkopf</a>
+          <a href={url('/')}>Início</a>
+          <a href={url('/memoriais')}>Memoriais</a>
           <a href={url('/familia')}>Família</a>
-          <a href={url('/sobre')}>Sobre</a>
+          <a href={url('/caderno')}>Caderno</a>
+          <a href={url('/enviar')}>Enviar</a>
         </nav>
       </div>
     </header>
     <main><slot /></main>
     <footer class="site-footer">
-      <div class="container">Família Wittmann · site público, discreto e revisado manualmente antes de publicar novas contribuições.</div>
+      <div class="container footer-links">
+        <span>Família Wittmann · site público, discreto e revisado manualmente.</span>
+        <span><a href={url('/sobre')}>Sobre</a> · <a href={url('/qr/ivo')}>QR de Ivo</a></span>
+      </div>
     </footer>
   </body>
 </html>

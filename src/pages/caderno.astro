@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/paths';
+---
+<BaseLayout
+  title="Caderno da Família - Família Wittmann"
+  description="Caderno da Família Wittmann com tradições, jogos, receitas, histórias e materiais preservados."
+>
+  <section class="container hero content">
+    <div class="eyebrow">Caderno da família</div>
+    <h1>Caderno da família</h1>
+    <p class="lead">Um espaço para tradições, jogos, receitas, histórias curtas e materiais úteis que fazem parte da vida familiar.</p>
+  </section>
+  <section class="container section grid grid-3">
+    <a class="card" href={url('/caderno/schafkopf')}>
+      <span class="tag">Jogo</span>
+      <h2 class="serif">Schafkopf</h2>
+      <p>Guia de regras com baralho comum, resumo visual e passo a passo para jogar em família.</p>
+    </a>
+  </section>
+</BaseLayout>
